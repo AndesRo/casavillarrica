@@ -73,28 +73,7 @@ const Hero = () => {
           </span>
         </p>
         
-        {/* Info destacada */}
-        <div className="bg-white/20 backdrop-blur-md p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl inline-block mb-6 md:mb-8 border border-white/30 shadow-lg md:shadow-2xl max-w-xs sm:max-w-md md:max-w-none mx-2">
-          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 lg:gap-8">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold whitespace-nowrap">A 15 min del centro de la Ciudad</p>
-            </div>
-            
-            <div className="hidden md:block w-px h-6 lg:h-8 bg-white/40"></div>
-            <div className="md:hidden w-full h-px bg-white/30 my-1"></div>
-            
        
-            
-            <div className="hidden md:block w-px h-6 lg:h-8 bg-white/40"></div>
-            <div className="md:hidden w-full h-px bg-white/30 my-1"></div>
-            
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full animate-pulse" style={{animationDelay: '0.6s'}}></div>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold whitespace-nowrap">Estacionamiento Privado</p>
-            </div>
-          </div>
-        </div>
         
         {/* Botones CTA */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 md:mb-8 px-2">
