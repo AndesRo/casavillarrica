@@ -386,48 +386,28 @@ Mensaje: ${formData.message}
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Proceso de reserva</h3>
+ <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Preguntas frecuentes</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-800 rounded-full flex items-center justify-center font-bold mr-4">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Consulta de disponibilidad</h4>
-                    <p className="text-gray-600">Envíanos tus fechas y te confirmamos disponibilidad en menos de 2 horas.</p>
-                  </div>
+              <div className="space-y-4">
+                <div className="border-b pb-4">
+                  <h4 className="font-semibold text-gray-800">¿Cuál es el horario de check-in y check-out?</h4>
+                  <p className="text-gray-600">Check-in: 15:00 hrs | Check-out: 12:00 hrs</p>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-800 rounded-full flex items-center justify-center font-bold mr-4">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Confirmación y pago</h4>
-                    <p className="text-gray-600">Te enviamos los datos para el depósito de garantía (30% del total).</p>
-                  </div>
+                <div className="border-b pb-4">
+                  <h4 className="font-semibold text-gray-800">¿Se permiten mascotas?</h4>
+                  <p className="text-gray-600">No se permiten mascotas para mantener el espacio limpio para todos.</p>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-800 rounded-full flex items-center justify-center font-bold mr-4">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Recibes toda la información</h4>
-                    <p className="text-gray-600">Te enviamos dirección exacta, código de acceso y recomendaciones.</p>
-                  </div>
+                <div className="border-b pb-4">
+                  <h4 className="font-semibold text-gray-800">¿Qué métodos de pago aceptan?</h4>
+                  <p className="text-gray-600">Se acepta solo transferencia bancaria.</p>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-800 rounded-full flex items-center justify-center font-bold mr-4">
-                    4
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">¡Disfruta tu estadía!</h4>
-                    <p className="text-gray-600">Estaremos disponibles durante tu estadía para cualquier consulta.</p>
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">¿Requieren depósito de garantía?</h4>
+                  <p className="text-gray-600">No, el depósito de garantía es opcional.</p>
                 </div>
               </div>
             </div>
