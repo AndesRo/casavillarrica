@@ -114,87 +114,91 @@ h1, h2, h3 {
 
 
 
-/* Agrega esto al final de tu index.css */
+/* Agrega o modifica estas reglas en tu index.css */
 
-/* Animación para el letrero flotante */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(-4px);
+/* Media queries personalizadas */
+@media (max-width: 640px) {
+  .btn-primary, .btn-secondary, .btn-whatsapp {
+    font-size: 14px;
+    padding: 10px 16px;
   }
-  50% {
-    transform: translateY(4px);
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.875rem;
   }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Animación para el brillo del letrero */
-@keyframes shine {
-  0% {
-    background-position: -200% center;
+/* Ajustes específicos para móviles pequeños */
+@media (max-width: 375px) {
+  .btn-primary, .btn-secondary, .btn-whatsapp {
+    font-size: 12px;
+    padding: 8px 12px;
   }
-  100% {
-    background-position: 200% center;
+  
+  h1 {
+    font-size: 1.25rem;
   }
 }
 
-.animate-shine {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: shine 3s infinite;
-}
-
-/* Animación para el parpadeo */
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
+/* Mejoras para tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .section-padding {
+    padding: 40px 24px;
   }
 }
 
-.animate-blink {
-  animation: blink 2s infinite;
+/* Asegurar que las imágenes sean responsivas */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Efecto de latido para elementos importantes */
-@keyframes heartbeat {
-  0% {
-    transform: scale(1);
+/* Mejorar la legibilidad en móviles */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
   }
-  50% {
-    transform: scale(1.05);
+  
+  h1, h2, h3 {
+    line-height: 1.2;
   }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.animate-heartbeat {
-  animation: heartbeat 2s infinite;
-}
-
-/* Efecto de onda para botones */
-@keyframes wave {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(37, 99, 235, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  
+  p {
+    margin-bottom: 1rem;
   }
 }
 
-.animate-wave {
-  animation: wave 2s infinite;
+/* Animación optimizada para móviles */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-bounce,
+  .animate-pulse,
+  .animate-ping,
+  .animate-spin {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mejorar el touch target para botones en móviles */
+@media (max-width: 768px) {
+  button, 
+  a.btn-primary,
+  a.btn-secondary,
+  a.btn-whatsapp {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input, 
+  select, 
+  textarea {
+    font-size: 16px; /* Previene zoom en iOS */
+  }
 }
