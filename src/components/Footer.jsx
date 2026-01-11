@@ -33,7 +33,7 @@ const Footer = () => {
                 <span>+56 9 97416485</span>
               </a>
               <a 
-                href="mailto:contacto@casavillarrica.cl"
+                href="mailto:andespart.ar@gmail.com"
                 className="flex items-center text-gray-300 hover:text-white transition-colors"
               >
                 <FaEnvelope className="mr-3" />

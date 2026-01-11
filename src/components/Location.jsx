@@ -5,7 +5,7 @@ const Location = () => {
   return (
     <section className="section-padding bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <h2 className="section-title">Ubicación privilegiada</h2>
+        <h2 className="section-title">Ubicación</h2>
         <p className="section-subtitle">
           Disfruta de la tranquilidad de un sector residencial con fácil acceso a todos los servicios y atracciones
         </p>
