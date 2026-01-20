@@ -1,111 +1,167 @@
 import React from 'react';
-import { FaHome, FaWhatsapp, FaCalendarAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaCalendarAlt, FaMapMarkerAlt, FaWifi, FaCar } from 'react-icons/fa';
+import { GiHouse } from 'react-icons/gi';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 md:pt-0">
-      {/* Imagen de fondo */}
+    <section className="relative min-h-screen flex items-center justify-center pt-16 md:pt-0 overflow-hidden">
+      {/* Imagen de fondo con overlay mejorado */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/volcan.jpg" 
-          alt="Casa en Villarrica" 
-          className="w-full h-full object-cover"
+          alt="Vista del volcán Villarrica desde la propiedad" 
+          className="w-full h-full object-cover object-center"
           fetchpriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/40 md:from-black/60 md:via-black/40 md:to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/40 md:from-black/70 md:via-black/50 md:to-black/30"></div>
+        {/* Efecto de granulado para textura */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWx0ZXI9InVybCgjYSkiIG9wYWNpdHk9Ii4wNSIvPjwvc3ZnPg==')] opacity-20"></div>
       </div>
       
-      {/* Contenido */}
-      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto w-full py-8">
-        {/* Letrero "Se Arrienda" - Versión Mobile */}
-        <div className="mb-6 md:mb-8 transform md:-translate-y-4 animate-float">
-          <div className="inline-flex flex-col items-center w-full px-2">
-            {/* Hilo del letrero - Solo visible en desktop */}
-            <div className="hidden md:block w-1 h-16 bg-gradient-to-b from-yellow-300 via-yellow-500 to-transparent mb-2"></div>
+      {/* Efecto de partículas decorativas */}
+      <div className="absolute inset-0 z-1 overflow-hidden">
+        {[...Array(5)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute w-1 h-1 sm:w-2 sm:h-2 bg-yellow-400 rounded-full animate-pulse"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 2}s`,
+              animationDuration: `${2 + Math.random() * 3}s`
+            }}
+          ></div>
+        ))}
+      </div>
+      
+      {/* Contenido principal */}
+      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto w-full py-6 md:py-12">
+        
+        {/* Badge de ubicación premium */}
+        <div className="mb-6 md:mb-8 inline-flex items-center gap-2 bg-gradient-to-r from-primary-600/90 to-primary-800/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-white/20">
+          <FaMapMarkerAlt className="text-yellow-300 animate-pulse" />
+          <span className="text-sm md:text-base font-medium">Villarrica, Región de la Araucanía</span>
+        </div>
+
+        {/* Letrero principal mejorado */}
+        <div className="mb-6 md:mb-10 relative">
+          <div className="relative inline-block">
+            {/* Efecto de brillo alrededor */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-yellow-600/30 to-orange-600/30 blur-2xl rounded-full animate-pulse"></div>
             
-            {/* Cartel "Se Arrienda" */}
-            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-none">
-              {/* Sombra del cartel */}
-              <div className="absolute inset-0 bg-black/20 md:bg-black/30 blur-md md:blur-lg rounded-xl md:rounded-2xl transform translate-y-2 md:translate-y-4"></div>
-              
-              {/* Cartel principal */}
-              <div className="relative bg-gradient-to-r from-wood-600 via-wood-500 to-wood-600 text-white px-4 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 rounded-lg md:rounded-xl shadow-xl md:shadow-2xl border-2 md:border-4 border-wood-800 transform md:rotate-[-1.5deg] hover:md:rotate-0 transition-transform duration-500">
-                {/* Gancho del cartel - Solo desktop */}
-                <div className="absolute -top-2 md:-top-4 left-1/2 transform -translate-x-1/2 w-8 md:w-12 h-1 md:h-2 bg-wood-800 rounded-t-lg"></div>
-                
-                <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4">
-                  <FaHome className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-200 animate-pulse" />
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide md:tracking-wider">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-100">
-                      SE ARRIENDA
-                    </span>
-                  </h1>
-                  <FaHome className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-yellow-200 animate-pulse" />
-                </div>
-                
-                <div className="mt-1 md:mt-2 flex items-center justify-center gap-1 md:gap-2">
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-yellow-400 rounded-full animate-bounce"></div>
-                  <p className="text-xs sm:text-sm md:text-lg font-semibold text-yellow-100">¡Reserva ahora!</p>
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-yellow-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                </div>
+            {/* Contenedor del letrero */}
+            <div className="relative bg-gradient-to-br from-wood-700 via-wood-600 to-wood-800 text-white px-6 py-4 md:px-10 md:py-6 rounded-2xl shadow-2xl border-2 border-wood-900 transform hover:scale-105 transition-transform duration-500">
+              {/* Elementos decorativos laterales */}
+              <div className="absolute -left-2 md:-left-4 top-1/2 transform -translate-y-1/2">
+                <GiHouse className="text-yellow-300 text-xl md:text-3xl animate-bounce" />
+              </div>
+              <div className="absolute -right-2 md:-right-4 top-1/2 transform -translate-y-1/2">
+                <GiHouse className="text-yellow-300 text-xl md:text-3xl animate-bounce" style={{animationDelay: '0.5s'}} />
               </div>
               
-              {/* Decoración de esquinas - Solo desktop */}
-              <div className="hidden md:block absolute -top-2 -left-2 w-6 h-6 lg:w-8 lg:h-8 border-t-4 border-l-4 border-yellow-400 rounded-tl-lg"></div>
-              <div className="hidden md:block absolute -top-2 -right-2 w-6 h-6 lg:w-8 lg:h-8 border-t-4 border-r-4 border-yellow-400 rounded-tr-lg"></div>
-              <div className="hidden md:block absolute -bottom-2 -left-2 w-6 h-6 lg:w-8 lg:h-8 border-b-4 border-l-4 border-yellow-400 rounded-bl-lg"></div>
-              <div className="hidden md:block absolute -bottom-2 -right-2 w-6 h-6 lg:w-8 lg:h-8 border-b-4 border-r-4 border-yellow-400 rounded-br-lg"></div>
+              {/* Texto principal */}
+              <div className="flex flex-col items-center">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-3 tracking-tight">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-yellow-100 to-white">
+                    SE ARRIENDA
+                  </span>
+                </h1>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-green-400 rounded-full animate-ping"></div>
+                  <p className="text-sm md:text-lg font-semibold text-yellow-100">Casa en Villarrica</p>
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-green-400 rounded-full animate-ping" style={{animationDelay: '0.3s'}}></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Título principal */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-3 md:mb-4 drop-shadow-xl md:drop-shadow-2xl px-2">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
-            Casa en Villarrica
-          </span>
-        </h1>
-        
-        {/* Subtítulo */}
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 md:mb-6 max-w-2xl md:max-w-3xl mx-auto font-light px-2">
-          <span className="bg-black/30 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-2 rounded-lg inline-block">
-            Cómoda casa familiar, en el Sur de Chile
-          </span>
-        </p>
-        
-       
-        
-        {/* Botones CTA */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 md:mb-8 px-2">
+        {/* Título con efecto de destello */}
+        <div className="mb-4 md:mb-6 relative">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+            <span className="relative">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-50 drop-shadow-lg">
+             
+              </span>
+              {/* Efecto de destello animado */}
+              <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine"></span>
+            </span>
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl font-light text-blue-100 max-w-2xl mx-auto">
+   
+          </p>
+        </div>
+     
+        {/* Descripción */}
+        <div className="mb-8 md:mb-10 max-w-2xl mx-auto">
+          <div className="bg-black/30 backdrop-blur-md rounded-2xl p-4 md:p-6 border border-white/10 shadow-xl">
+            <p className="text-base md:text-lg leading-relaxed">
+              <span className="text-yellow-200 font-semibold">Cómoda casa familiar</span> ubicada en el sur de Chile. 
+              Perfecta para desconectar y disfrutar de la naturaleza.
+            </p>
+          </div>
+        </div>
+
+        {/* Botones CTA mejorados */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 px-2 max-w-2xl mx-auto">
+          {/* Botón WhatsApp con efecto de onda */}
           <a 
             href="https://wa.me/56997416485?text=Hola,%20me%20interesa%20reservar%20la%20casa%20en%20Villarrica"
             target="_blank"
             rel="noopener noreferrer"
-            className="group btn-whatsapp flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg px-4 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg md:shadow-2xl"
+            className="group relative overflow-hidden bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
           >
-            <FaWhatsapp className="text-lg sm:text-xl md:text-2xl group-hover:animate-bounce" />
-            <span className="font-bold">Reservar por WhatsApp</span>
+            {/* Efecto de onda */}
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500/0 via-green-400/30 to-green-500/0 animate-shine"></div>
+            
+            <div className="relative flex items-center justify-center gap-3">
+              <FaWhatsapp className="text-2xl group-hover:animate-bounce" />
+              <div className="text-left">
+                <div className="font-bold text-lg">Reservar por WhatsApp</div>
+                <div className="text-sm opacity-90">Respuesta inmediata</div>
+              </div>
+            </div>
+            
+            {/* Indicador de disponibilidad */}
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
           </a>
           
+          {/* Botón secundario */}
           <a 
             href="#contacto" 
-            className="group btn-primary flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg px-4 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl hover:scale-105 transition-all duration-300 shadow-lg md:shadow-2xl"
+            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
           >
-            <FaCalendarAlt className="text-base sm:text-lg md:text-xl group-hover:animate-pulse" />
-            <span className="font-bold">Consultar disponibilidad</span>
+            <div className="relative flex items-center justify-center gap-3">
+              <FaCalendarAlt className="text-xl group-hover:animate-pulse" />
+              <div className="text-left">
+                <div className="font-bold text-lg">Consultar disponibilidad</div>
+                <div className="text-sm opacity-90">Formulario rápido</div>
+              </div>
+            </div>
           </a>
         </div>
-        
-    
       </div>
       
-      {/* Flecha para desplazarse */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2">
-        <a href="#galeria" className="text-white animate-bounce flex flex-col items-center">
-          <span className="text-xs sm:text-sm mb-1 md:mb-2 opacity-80">Ver más</span>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+      {/* Flecha para scroll con mejor diseño */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+        <a href="#galeria" className="group flex flex-col items-center">
+          <span className="text-sm text-white/70 mb-2 group-hover:text-white transition-colors">Explorar propiedad</span>
+          <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 animate-bounce">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5 text-white" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+              />
+            </svg>
+          </div>
         </a>
       </div>
     </section>
