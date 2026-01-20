@@ -347,3 +347,149 @@ img {
     background-position: 100% 50%;
   }
 }
+
+
+
+/* Estilos específicos para la galería */
+
+/* Prevenir scroll cuando el modal está abierto */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Animación suave para la apertura del modal */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Efecto de carga para imágenes */
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Mejorar el carrusel táctil para móviles */
+@media (max-width: 768px) {
+  .gallery-scroll {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .gallery-scroll > div {
+    scroll-snap-align: start;
+  }
+  
+  /* Ocultar scrollbar pero mantener funcionalidad */
+  .gallery-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .gallery-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Transiciones suaves para imágenes */
+.gallery-image {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto de profundidad para las tarjetas */
+.gallery-card {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el modal en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .modal-image-container {
+    padding: 8px !important;
+  }
+  
+  .modal-buttons {
+    transform: scale(0.9);
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modal-content {
+    max-width: 90vw !important;
+  }
+}
+
+/* Mejorar la navegación con gestos táctiles */
+.touch-gesture-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  z-index: 10;
+}
+
+.touch-gesture-area-left {
+  left: 0;
+}
+
+.touch-gesture-area-right {
+  right: 0;
+}
+
+/* Efecto de brillo para imágenes seleccionadas */
+.selected-image {
+  position: relative;
+}
+
+.selected-image::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #f59e0b, #ec4899, #3b82f6, #10b981);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  animation: rainbowBorder 3s linear infinite;
+}
+
+@keyframes rainbowBorder {
+  0% {
+    opacity: 0.5;
+    background-position: 0% 50%;
+  }
+  50% {
+    opacity: 0.8;
+    background-position: 100% 50%;
+  }
+  100% {
+    opacity: 0.5;
+    background-position: 0% 50%;
+  }
+}

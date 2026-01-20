@@ -54,11 +54,9 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>© {new Date().getFullYear()} AndesRo - Arriendo turístico. Todos los derechos reservados.</p>
-          <p className="mt-2 text-sm">Villarrica, Región de la Araucanía, Chile</p>
+
           <div className="mt-4 flex justify-center space-x-6">
-            <a href="#" className="text-sm hover:text-white transition-colors">Términos y condiciones</a>
-            <a href="#" className="text-sm hover:text-white transition-colors">Política de privacidad</a>
-            <a href="#" className="text-sm hover:text-white transition-colors">Aviso legal</a>
+            
           </div>
         </div>
       </div>
